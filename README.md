@@ -13,3 +13,4 @@ The plan is as follows:
 
 
 17:23 Create repo, write `Readme.md` with plan.
+19:25 Echo server mostly done.  Investigating how map over object.

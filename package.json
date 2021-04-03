@@ -2,12 +2,13 @@
   "name": "itzibitzi.js",
   "version": "2.0.0",
   "description": "Reimplementation of Itzibitzi in JavaScript.",
+  "author": "Einar Rasmussen",
+  "license": "ISC",
   "main": "itzibitzi.js",
+  "private": true,
   "scripts": {
     "test": "jest"
   },
-  "author": "Einar Rasmussen",
-  "license": "ISC",
   "devDependencies": {
     "eslint": "^7.23.0",
     "eslint-config-standard": "^16.0.2",
@@ -25,6 +26,5 @@
     "coverageReporters": [
       "html"
     ]
-  },
-  "private": true
+  }
 }
