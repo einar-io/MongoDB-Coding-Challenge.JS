@@ -1,0 +1,30 @@
+{
+  "name": "itzibitzi.js",
+  "version": "2.0.0",
+  "description": "Reimplementation of Itzibitzi in JavaScript.",
+  "main": "itzibitzi.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Einar Rasmussen",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "jest": "^26.6.3",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "fs": "*"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "html"
+    ]
+  },
+  "private": true
+}
