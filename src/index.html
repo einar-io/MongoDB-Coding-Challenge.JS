@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>itzibitzi.js - a JSON flattener</title>
+<style type = text/css>
+textarea {
+    height: 32em;
+    width: 36em;
+}
+div {
+    display:inline-block;
+    vertical-align: middle;
+}
+button {
+    vertical-align: middle;
+    padding: 10px;
+    margin: 20px;
+}
+</style>
+</head>
+
+
+<body>
+    <h1>JSON flattener</h1>
+
+    <div>
+    <h2>Original</h2>
+    <textarea id='src'>
+    </textarea>
+    </div>
+
+    <div>
+    <button id='btn' autofocus>Flatten</button>
+    </div>
+
+    <div>
+    <h2>Flattened</h2>
+    <textarea id='dst'></textarea>
+    </div>
+
+</body>
+
+
+<script>
+const src = document.getElementById('src')
+const dst = document.getElementById('dst')
+const btn = document.getElementById('btn')
+btn.addEventListener('click', () => embiggen(src, dst))
+
+const defaultObj = `{
+    "a": 1,
+    "b": true,
+    "c": {
+        "d": 3,
+        "e": "test"
+    }
+}`
+
+async function embiggen(src, dst) {
+ dst.value = src.value.toUpperCase()
+    // output.txt = itzibitzi.flatten(input)
+}
+
+src.value = defaultObj
+</script>
+
+
+</html>

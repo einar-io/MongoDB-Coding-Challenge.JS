@@ -4,10 +4,11 @@
   "description": "Reimplementation of Itzibitzi in JavaScript.",
   "author": "Einar Rasmussen",
   "license": "ISC",
-  "main": "itzibitzi.js",
+  "main": "src/itzibitzi.js",
   "private": true,
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node src/itzibitzi.js"
   },
   "devDependencies": {
     "eslint": "^7.23.0",
