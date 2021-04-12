@@ -41,13 +41,14 @@ button {
 </body>
 
 
+<script src='itzibitzi.js'></script>
 <script>
-const src = document.getElementById('src')
-const dst = document.getElementById('dst')
-const btn = document.getElementById('btn')
-btn.addEventListener('click', () => embiggen(src, dst))
+function translate (src, dst) {
+    dst.value = parseAndFlatten(src.value)
+}
 
-const defaultObj = `{
+const defaultObj = 
+`{
     "a": 1,
     "b": true,
     "c": {
@@ -56,12 +57,17 @@ const defaultObj = `{
     }
 }`
 
-async function embiggen(src, dst) {
- dst.value = src.value.toUpperCase()
-    // output.txt = itzibitzi.flatten(input)
-}
+async function main () {
+    const src = document.getElementById('src')
+    const dst = document.getElementById('dst')
+    const btn = document.getElementById('btn')
+    btn.addEventListener('click', () => translate(src, dst))
 
-src.value = defaultObj
+    src.value = defaultObj
+    translate(src, dst)
+} 
+
+    main()
 </script>
 
 
