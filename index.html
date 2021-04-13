@@ -23,6 +23,8 @@ button {
 <body>
     <h1>JSON flattener</h1>
 
+    By Einar Rasmussen<br> <a href="mailto:einar@einar.io">einar&#64einar.io</a><br>
+    
     <div>
     <h2>Original</h2>
     <textarea id='src'>
@@ -37,19 +39,21 @@ button {
     <h2>Flattened</h2>
     <textarea id='dst'></textarea>
     </div>
-    <br/>
+    <br>
 
-
-    The <a href='https://gist.github.com/doug-ol/0c018e82c095cd3addcb1275999c966f'>problem</a> description.
-    <br/>
-    Github repositories with my solutions: <a href='https://github.com/einar-io/MongoDB-Coding-Challenge'>Haskell<a/>,
-    <a href='https://github.com/einar-io/MongoDB-Coding-Challenge'>JavaScript<a/>.
-
+    <h2>Resources</h2>
+    <small>Latest update: 2021-04-13.</small>
+    <ol>
+        <li>Read the <a href='https://gist.github.com/doug-ol/0c018e82c095cd3addcb1275999c966f'>problem</a> description.</li>
+        <li>Review my Github repositories with solutions and tests: 
+    <a href='https://github.com/einar-io/MongoDB-Coding-Challenge.JS'>JavaScript<a/> (this site) and
+    <a href='https://github.com/einar-io/MongoDB-Coding-Challenge'>Haskell</a></li>
+        <li>Visit me on <a href='https://www.linkedin.com/in/einarrasmussen/'>LinkedIn</a></li>
 
 </body>
 
 
-<script src='itzibitzi.js'></script>
+<script src='src/itzibitzi.js'></script>
 <script>
 function translate (src, dst) {
     dst.value = parseAndFlatten(src.value)

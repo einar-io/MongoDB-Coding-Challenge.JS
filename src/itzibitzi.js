@@ -54,19 +54,20 @@ function flatten (obj) {
 }
 
 function parseAndFlatten (usrtxt) {
-/* JSON.parse() is a picky eater.  We should use a more comprehensive
- * deprettyfier, but for demonstration purposes, this will do. */
-    const preprocess = usrtxt.replace(/\n/g, '').replace(/\s{2,}/g, ' ')
+/* JSON.parse() is a picky eater.  We should use a more comprehensive uglifier
+ * as preprocessing, but for demonstration purposes, this will do. */
+    const preprocess = usrtxt.replace(/\n/g, '').replace(/\t/g, '').replace(/\s{2,}/g, ' ')
     let parsed
     try {
         parsed = JSON.parse(preprocess)
     } catch (e) {
-        return `ERROR: The provided string could not be parsed as JSON.  The strings was:
+        return `ERROR: The supplied string could not be parsed as a valid JSON object.  The string was:
 '''
 ${usrtxt}
 '''
-Please check you did not forget a curly bracket or similar.
-See also: https://www.json.org.`
+Please check that you did not forget a curly bracket, that you enquoted the keys in double quotes, and that
+you did not use JavaScript-only values, such as \`null\`, \`undefined\` or \`Infinity\`, as these
+are not valid JSON.  See also: https://www.json.org.`
     }
     const flatObj = flatten(parsed)
     const prettyStr = JSON.stringify(flatObj, null, 4)
