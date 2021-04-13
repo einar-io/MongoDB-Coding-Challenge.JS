@@ -60,12 +60,31 @@ function flatten (obj) {
   return Object.fromEntries(rvArr)
 }
 
-function parseAndFlatten (rawtxt) {
-  /* JSON.parse() is a picky eater.  We should use a more comprehensive deprettyfier,
-  but for demonstration purposes, this will do */
-  const preprocess = rawtxt.replace(/\n/g, '').replace(/\s{2,}/g, ' ')
-  const parsed     = JSON.parse(prep)
+function parseAndFlatten (usrtxt) {
+  /* JSON.parse() is a picky eater.  We should use a more comprehensive
+   * deprettyfier, but for demonstration purposes, this will do. */
+  const preprocess = usrtxt.replace(/\n/g, '').replace(/\s{2,}/g, ' ')
+  let parsed
+  try {
+    parsed = JSON.parse(preprocess)
+  } catch (e) {
+    return `ERROR: The provided string could not be parsed as JSON.  The strings was:
+'''
+${usrtxt}
+'''
+Please check you did not forget a curly bracket or similar.
+See also: https://www.json.org.`
+  }
   const flatObj    = flatten(parsed)
   const prettyStr  = JSON.stringify(flatObj, null, 4)
   return prettyStr
 }
+
+/*
+var exports = { '__esModule': true }
+exports.flatten = flatten
+exports.parseAndFlatten = parseAndFlatten
+*/
+var exports = { '__esModule': true }
+module.exports.flatten = flatten
+module.exports.parseAndFlatten = parseAndFlatten
