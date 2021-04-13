@@ -4,11 +4,12 @@
   "description": "Reimplementation of Itzibitzi in JavaScript.",
   "author": "Einar Rasmussen",
   "license": "ISC",
-  "main": "src/itzibitzi.js",
+  "main": "src/cli.js",
   "private": true,
   "scripts": {
     "test": "jest",
-    "start": "node src/itzibitzi.js"
+    "start": "node src/cli.js",
+    "run": "node src/cli.js"
   },
   "devDependencies": {
     "eslint": "^7.23.0",
@@ -17,10 +18,13 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
     "jest": "^26.6.3",
+    "mock-stdin": "^1.0.0",
     "typescript": "^4.2.3"
   },
   "dependencies": {
-    "fs": "*"
+    "fs": "*",
+    "get-stdin": "^8.0.0",
+    "jest-cli": "^26.6.3"
   },
   "jest": {
     "collectCoverage": true,
