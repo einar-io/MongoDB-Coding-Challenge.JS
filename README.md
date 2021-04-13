@@ -1,5 +1,5 @@
 # Welcome to `itzibitzi.js`
-Try it here: https://einar.io/code/MongoDB-Coding-Challenge.JS
+Try it now https://einar.io/code/MongoDB-Coding-Challenge.JS
 
 Based on my previous experience with implementing a 
 [solution in Haskell](https://github.com/einar-io/MongoDB-Coding-Challenge),
@@ -56,9 +56,8 @@ I consider implementing the following features:
    after some headaches.
 3. JavaScript is not known for its consistent type system.  This time around I learnt that:
 
-
-    typeof null === Object
-    null instanceof Object === false
+        typeof null === Object
+        null instanceof Object === false
 
 
 ## Thank you for reading!
