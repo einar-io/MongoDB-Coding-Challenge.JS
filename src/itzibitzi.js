@@ -73,8 +73,6 @@ See also: https://www.json.org.`
     return prettyStr
 }
 
-// Workaround for CommonJS module.
-/* exported exports */
-exports = { '__esModule': true }
+module.exports = { __esModule: true }
 module.exports.flatten = flatten
 module.exports.parseAndFlatten = parseAndFlatten

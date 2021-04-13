@@ -9,7 +9,7 @@ async function main () {
     const usrtxt = await getStdin()
 
     if (usrtxt === '') {
-        console.error('No input supplied.  Try: `echo \'{ "a": 1, "b": true, "c": { "d": 3, "e": "test" }}\' |  node src/cli.js`')
+        console.error('No input supplied.  Try: `echo \'{ "a": 1, "b": true, "c": { "d": 3, "e": "test" }}\' |  npm start`')
         process.exit(EXIT_FAILURE)
     }
 
