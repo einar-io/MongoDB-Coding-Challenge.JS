@@ -64,8 +64,11 @@ I consider implementing the following features:
 Do not hesitate to contact me if you have questions or need advice on how to
 use my solution.
 
-Kind regards  
-Einar
+Kind regards
+--
+Einar Rasmussen
+[einar@einar.io](mailto:einar@einar.io) 
+[LinkedIn](https://www.linkedin.com/in/einarrasmussen/)
 
 
 
