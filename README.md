@@ -1,11 +1,14 @@
 # Welcome to `itzibitzi.js`
+Try it here: https://einar.io/code/MongoDB-Coding-Challenge.JS
+
 Based on my previous experience with implementing a 
 [solution in Haskell](https://github.com/einar-io/MongoDB-Coding-Challenge),
 I decided to reimplement the challenge in JavaScript, because I concluded that
 would have a better tool for the job all along.  To improve the approachability
 of the code, I thought I would implement a tiny web interface as well.  
 I took the opportunity to upgrade my VPS to Nginx.
-The web interface is available right now at my homepage: https://einar.io/code/MongoDB-Coding-Challenge.JS
+The web interface is available right now on my 
+[homepage](https://einar.io/code/MongoDB-Coding-Challenge.JS).
 
 
 ## Command-line interface
@@ -52,6 +55,7 @@ I consider implementing the following features:
 2. Jest's integration with ES6 modules seemed to be unreliable, so I went with CommonJS
    after some headaches.
 3. JavaScript is not known for its consistent type system.  This time around I learnt that:
+
 
     typeof null === Object
     null instanceof Object === false
