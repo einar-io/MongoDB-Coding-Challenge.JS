@@ -23,8 +23,6 @@ button {
 <body>
     <h1>JSON flattener</h1>
 
-    By Einar Rasmussen<br> <a href="mailto:einar@einar.io">einar&#64einar.io</a><br>
-    
     <div>
     <h2>Original</h2>
     <textarea id='src'>
@@ -41,15 +39,24 @@ button {
     </div>
     <br>
 
-    <h2>Resources</h2>
-    <small>Latest update: 2021-04-13.</small>
+    <h2>Examples</h2>
     <ol>
+        <li><a href="#" id="lnk1">Example 1</a> The provided JSON object.</li>
+        <li><a href="#" id="lnk2">Example 2</a> A deeply nested JSON object.</li>
+        <li><a href="#" id="lnk3">Example 3</a> A JSON object with JSON's different value types.</li>
+    </ol>
+
+    <h2>Resources</h2>
+    <ul>
         <li>Read the <a href='https://gist.github.com/doug-ol/0c018e82c095cd3addcb1275999c966f'>problem</a> description.</li>
         <li>Review my Github repositories with solutions and tests: 
     <a href='https://github.com/einar-io/MongoDB-Coding-Challenge.JS'>JavaScript<a/> (this site) and
     <a href='https://github.com/einar-io/MongoDB-Coding-Challenge'>Haskell</a></li>
         <li>Visit me on <a href='https://www.linkedin.com/in/einarrasmussen/'>LinkedIn</a></li>
+    </ul><br>
 
+    Einar Rasmussen <a href="mailto:einar@einar.io">einar&#64einar.io</a><br>
+    <small>Latest update: 2021-04-14</small>
 </body>
 
 
@@ -59,7 +66,14 @@ function translate (src, dst) {
     dst.value = parseAndFlatten(src.value)
 }
 
-const defaultObj = 
+function present (val) {
+    return () => {
+        src.value = val
+        translate(src, dst)
+        }
+}
+
+const example1 = 
 `{
     "a": 1,
     "b": true,
@@ -69,17 +83,39 @@ const defaultObj =
     }
 }`
 
-async function main () {
-    const src = document.getElementById('src')
-    const dst = document.getElementById('dst')
-    const btn = document.getElementById('btn')
-    btn.addEventListener('click', () => translate(src, dst))
+const example2 = JSON.stringify(JSON.parse(
+`{
+    "1": { "2": {"3": {"4": {"5": {"6": {"7": {"8": {"9": {"10": {"11": {"12": {"13": {"14": {"15": {"16": {"17": {"18": {"19": {"20": "Success"}}}}}}}}}}}}}}}}}}}
+}`), null, 4)
 
-    src.value = defaultObj
-    //translate(src, dst)
-} 
+const example3 = JSON.stringify(JSON.parse(
+`{
+    "Values":
+        {
+        "Zero": 0,
+        "Negative Zero": -0,
+        "No-point": 1,
+        "Negative No-point": -2,
+        "Float": 1.0,
+        "Negative Float": -1.0,
+        "True": true,
+        "False": false,
+        "Null": null
+        }
+}`), null, 4)
 
-    main()
+const src = document.getElementById('src')
+const dst = document.getElementById('dst')
+const btn = document.getElementById('btn')
+const lnk1 = document.getElementById('lnk1')
+const lnk2 = document.getElementById('lnk2')
+const lnk3 = document.getElementById('lnk3')
+btn.addEventListener('click', () => translate(src, dst))
+lnk1.addEventListener('click', present(example1))
+lnk2.addEventListener('click', present(example2))
+lnk3.addEventListener('click', present(example3))
+
+window.onload = () => src.value = example1
 </script>
 
 
